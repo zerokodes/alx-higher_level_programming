@@ -6,5 +6,5 @@ def print_last_digit(number):
         ld = number % -10
         ld *= -1
 
-        print("{:d}".format(ld), end='')
-        return (ld)
+    print("{:d}".format(ld), end='')
+    return (ld)
