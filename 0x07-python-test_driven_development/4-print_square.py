@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# Author: Sangwani P. Zyambo
 
 """
     Defines a function that prints a square
