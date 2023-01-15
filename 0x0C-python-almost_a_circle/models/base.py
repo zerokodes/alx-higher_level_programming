@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# Software Engineer at ALX
 """Defines a base model class."""
 import json
 import csv
