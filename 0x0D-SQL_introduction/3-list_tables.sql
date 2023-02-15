@@ -1,1 +1,2 @@
-irhuusihuhfduinsk
+-- show tables
+SHOW TABLES;
