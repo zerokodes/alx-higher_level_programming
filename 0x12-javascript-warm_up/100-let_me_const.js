@@ -1,1 +1,2 @@
-cbc,jkd
+#!/usr/bin/node
+myVar = 333;
