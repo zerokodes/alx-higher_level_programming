@@ -1,32 +1,19 @@
 #!/usr/bin/python3
-"""
-Module  sends a POST request to http://0.0.0.0:5000/search_user
-with the letter as a parameter.
-"""
+"""Sends a POST request to http://0.0.0.0:5000 """
+
 import requests
 from sys import argv
 
+if __name__ == "__main__":
+    letter = "" if len(argv) == 1 else argv[1]
+    payload = {"q": letter}
 
-def main(argv):
-    """
-    Script that takes in a letter and sends a POST request to
-    http://0.0.0.0:5000/search_user with the letter as a parameter.
-    """
-    if len(argv) < 2:
-        q = ""
-    else:
-        q = argv[1]
-    payload = {'q': q}
-    url = "http://0.0.0.0:5000/search_user"
-    r = requests.post(url, data=payload)
+    r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     try:
-        result = r.json()
-        if bool(result) is False:
+        response = r.json()
+        if response == {}:
             print("No result")
         else:
-            print("[{}] {}".format(result['id'], result['name']))
-    except:
+            print("[{}] {}".format(response.get("id"), response.get("name")))
+    except ValueError:
         print("Not a valid JSON")
-
-if __name__ == "__main__":
-    main(argv)
